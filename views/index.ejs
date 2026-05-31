@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Here is your all Posts</h1>
+
+<% if(posts.length === 0){ %>
+    <h3>No posts found</h3>
+<% } else { %>
+
+    <% for(let post of posts){ %>
+        <div class="post">
+            <h3>@<%= post.username %></h3>
+            <p><%= post.content %></p>
+        </div>
+        <a href="/posts/<%= post._id %>">View Details</a>
+        <a href="/posts/<%= post._id %>/edit">Edit Post</a><br>
+        <form action="/posts/<%= post._id %>?_method=DELETE" method="POST" class="delete-form"> 
+            <button type="submit">Delete Post</button>
+        </form>
+        <hr>
+    <% } %>
+
+<% } %> <br>
+<a href="/posts/new"><b>Creat New Post</b></a>
+</body>
+</html>

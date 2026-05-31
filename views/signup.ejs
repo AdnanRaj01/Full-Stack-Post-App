@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Signup</title>
+
+<link rel="stylesheet"
+href="/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<h1>Create Account</h1>
+
+<% if(success.length > 0){ %>
+
+<div class="alert success">
+
+<span><%= success %></span>
+
+<button class="closeAlert">
+X
+</button>
+
+</div>
+
+<% } %>
+
+<% if(error.length > 0){ %>
+
+<div class="alert error">
+
+<span><%= error %></span>
+
+<button class="closeAlert">
+X
+</button>
+
+</div>
+
+<% } %>
+
+<form action="/signup"
+method="POST">
+
+<input
+type="text"
+name="username"
+placeholder="Username"
+required>
+
+<br><br>
+
+<input
+type="email"
+name="email"
+placeholder="example@gmail.com"
+pattern=".+@gmail\.com"
+required>
+
+<br><br>
+
+<div class="passwordBox">
+
+<input
+type="password"
+name="password"
+id="password"
+placeholder="Password"
+pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$#_-]).{8,}$"
+title="Password must contain uppercase, lowercase, number, special character and minimum 8 characters"
+required>
+
+<i class="fa-solid fa-eye togglePassword"></i>
+
+</div>
+
+<br><br>
+
+<button type="submit">
+Signup
+</button>
+
+</form>
+
+<br>
+
+<a href="/login">
+Already have account?
+</a>
+
+<script src="/auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Login</title>
+
+<link rel="stylesheet"
+href="/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<h1>Login</h1>
+
+<% if(success.length > 0){ %>
+
+<div class="alert success">
+
+<span><%= success %></span>
+
+<button class="closeAlert">
+X
+</button>
+
+</div>
+
+<% } %>
+
+<% if(error.length > 0){ %>
+
+<div class="alert error">
+
+<span><%= error %></span>
+
+<button class="closeAlert">
+X
+</button>
+
+</div>
+
+<% } %>
+
+<form action="/login"
+method="POST">
+
+<input
+type="text"
+name="username"
+placeholder="Username"
+required>
+
+<br><br>
+
+<input
+type="email"
+name="email"
+placeholder="example@gmail.com"
+pattern=".+@gmail\.com"
+required>
+
+<br><br>
+
+<div class="passwordBox">
+
+<input
+type="password"
+name="password"
+id="password"
+placeholder="Password"
+required>
+
+<i class="fa-solid fa-eye togglePassword"></i>
+
+</div>
+
+<br><br>
+
+<button type="submit">
+Login
+</button>
+
+</form>
+
+<br>
+
+<a href="/signup">
+Create account
+</a>
+<br>
+<br>
+
+<a href="/forgot-password">
+    Forgot Password?
+</a>
+
+<script src="/auth.js"></script>
+
+</body>
+</html>

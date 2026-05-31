@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Login Success</title>
+
+<style>
+
+body{
+
+    margin: 0;
+
+    padding: 0;
+
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #111;
+
+    font-family: Arial;
+}
+
+.container{
+
+    text-align: center;
+
+    color: white;
+}
+
+.loader{
+
+    width: 70px;
+
+    height: 70px;
+
+    border: 8px solid #444;
+
+    border-top: 8px solid #00ff99;
+
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+
+    margin: auto;
+}
+
+@keyframes spin{
+
+    100%{
+
+        transform: rotate(360deg);
+    }
+}
+
+h1{
+
+    margin-top: 25px;
+
+    font-size: 30px;
+}
+
+p{
+
+    color: #ccc;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="loader"></div>
+
+<h1>Login Successful</h1>
+
+<p>
+Please wait...
+Redirecting to dashboard
+</p>
+
+</div>
+
+<script>
+
+setTimeout(() => {
+
+    window.location.href = "/secret";
+
+}, 3000);
+
+</script>
+
+</body>
+</html>

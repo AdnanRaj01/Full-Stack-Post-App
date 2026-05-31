@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Details</title>
+</head>
+<body>
+
+    <h1>Here is Post in Details</h1>
+
+    <div class="post">
+
+        <h2>Post ID: <%= post._id %></h2>
+
+        <h3>@<%= post.username %></h3>
+
+        <p><%= post.content %></p>
+
+    </div><br>
+   <a href="/posts"><b>Back to all Posts</b></a>
+</body>
+</html>
